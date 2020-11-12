@@ -1,0 +1,64 @@
+######## variables ######
+@url = http://localhost:3000/api
+
+#####################################################
+// create a post
+POST {{url}}/api/posts/create HTTP/1.1
+Content-Type: application/json
+
+{
+    "title":"Acer Notebook",
+    "description":"Acer Notebook is a complete 5 TB SDD notebook that gives awesome experience while writing notes into it.",
+    "published":true,
+    "publisher":"Vishwajeet"
+}
+
+########## Get all posts ########
+GET {{url}}/posts/all HTTP/1.1
+
+########## Get posts by id ######
+GET {{url}}/posts/2 HTTP/1.1
+
+######### update post #########
+POST {{url}}/post/update/2 HTTP/1.1
+Content-Type: application/json
+
+{
+    "publisher":"Rahul Shinde"
+}
+
+######### Create new user ######
+POST {{url}}/user/create HTTP/1.1
+Content-Type : application/json
+
+{
+    "username":"ashish",
+    "email":"ashish@gmail.com",
+    "password":"Ashish@789",
+    "role":"user"
+}
+
+##### Get all Users #####
+GET {{url}}/user/all HTTP/1.1
+
+#### Get single User from its id #####
+GET {{url}}/user/2 HTTP/1.1
+
+#### Update Current User  By Id ######
+PUT {{url}}/user/update/2 HTTP/1.1
+Content-Type: application/json
+
+{
+    "email":"nik@yahoo.in",
+    "username":"nik",
+    "password":"Nik@123",
+    "status":"true",
+    "role":"user"
+}
+
+
+##### Delete Current User With Its Id #####
+DELETE {{url}}/user/delete/2 HTTP/1.1
+
+##### Delete all users ######
+DELETE {{url}}/user/deleteAll HTTP/1.1
